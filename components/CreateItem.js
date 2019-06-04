@@ -61,7 +61,10 @@ class CreateItem extends Component {
 	}
 	render () {
 		return (
-			<Mutation mutation={CREATE_ITEM_MUTATION} variables={this.state} >
+			<Mutation
+				mutation={CREATE_ITEM_MUTATION}
+				variables={this.state}
+				>
 				{(createItem, {loading, error}) => (
 					<Form onSubmit={ async (e) => {
 						//Stop the form from submitting
@@ -76,7 +79,7 @@ class CreateItem extends Component {
 						})
 					}}>
 						<Error error={error}/>
-						<fieldset disable={loading} aria-busy={loading}>
+						<fieldset disabled={loading} aria-busy={loading}>
 							<label htmlFor="file">
 								Title
 								<input
@@ -106,7 +109,8 @@ class CreateItem extends Component {
 									id="price"
 									name="price"
 									placeholder="Price"
-									required value={this.state.price}
+									required
+									value={this.state.price}
 									onChange={this.handleChange}
 								/>
 							</label>
